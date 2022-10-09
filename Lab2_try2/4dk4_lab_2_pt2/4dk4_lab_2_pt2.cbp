@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="4dk4_lab_2_pt2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/4dk4_lab_2_pt2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../GNU_PUBLIC_LICENSE.txt" />
+		<Unit filename="../GPL_HEADER.txt" />
+		<Unit filename="../README" />
+		<Unit filename="../cleanup_memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../cleanup_memory.h" />
+		<Unit filename="../main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../main.h" />
+		<Unit filename="../modified lab2 for q5.zip" />
+		<Unit filename="../output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../output.h" />
+		<Unit filename="../packet_arrival.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../packet_arrival.h" />
+		<Unit filename="../packet_transmission.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../packet_transmission.h" />
+		<Unit filename="../simlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../simlib.h" />
+		<Unit filename="../simparameters.h" />
+		<Unit filename="../trace.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

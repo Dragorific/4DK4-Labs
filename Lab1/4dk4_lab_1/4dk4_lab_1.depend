@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1562083933 source:e:\school stuff\4th year\4dk4\lab1\simlib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"trace.h"
+	"simlib.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab1\trace.h
+
+1536251484 e:\school stuff\4th year\4dk4\lab1\simlib.h
+	<stdlib.h>
+
+1663278937 source:e:\school stuff\4th year\4dk4\lab1\coe4dk4_lab_1_2022.c
+	<stdio.h>
+	"simlib.h"
+

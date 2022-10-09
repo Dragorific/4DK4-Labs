@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1665106153 source:e:\school stuff\4th year\4dk4\lab2_try2\cleanup_memory.c
+	"simlib.h"
+	"main.h"
+	"cleanup_memory.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab2_try2\simlib.h
+	<stdlib.h>
+
+1665107547 e:\school stuff\4th year\4dk4\lab2_try2\main.h
+	"simlib.h"
+	"simparameters.h"
+
+1665109427 e:\school stuff\4th year\4dk4\lab2_try2\simparameters.h
+
+1536251484 e:\school stuff\4th year\4dk4\lab2_try2\cleanup_memory.h
+
+1665108302 source:e:\school stuff\4th year\4dk4\lab2_try2\main.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"output.h"
+	"simparameters.h"
+	"packet_arrival.h"
+	"cleanup_memory.h"
+	"trace.h"
+	"main.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab2_try2\output.h
+	"trace.h"
+	"main.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab2_try2\trace.h
+
+1665105911 e:\school stuff\4th year\4dk4\lab2_try2\packet_arrival.h
+	"simlib.h"
+
+1665109146 source:e:\school stuff\4th year\4dk4\lab2_try2\output.c
+	<stdio.h>
+	"simparameters.h"
+	"main.h"
+	"output.h"
+
+1536251484 source:e:\school stuff\4th year\4dk4\lab2_try2\simlib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"trace.h"
+	"simlib.h"
+
+1665108722 source:e:\school stuff\4th year\4dk4\lab2_try2\packet_arrival.c
+	<math.h>
+	<stdio.h>
+	"main.h"
+	"packet_transmission.h"
+	"packet_arrival.h"
+
+1665105942 e:\school stuff\4th year\4dk4\lab2_try2\packet_transmission.h
+	"main.h"
+
+1665339315 source:e:\school stuff\4th year\4dk4\lab2_try2\packet_transmission.c
+	<stdio.h>
+	"trace.h"
+	"main.h"
+	"output.h"
+	"packet_transmission.h"
+
