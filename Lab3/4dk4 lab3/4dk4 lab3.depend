@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1667359319 source:e:\school stuff\4th year\4dk4\lab3\call_arrival.c
+	<math.h>
+	<stdio.h>
+	"main.h"
+	"call_duration.h"
+	"simparameters.h"
+	"call_departure.h"
+	"call_arrival.h"
+
+1667358274 e:\school stuff\4th year\4dk4\lab3\main.h
+	"simlib.h"
+
+1667183231 e:\school stuff\4th year\4dk4\lab3\simlib.h
+	<stdlib.h>
+
+1667332270 e:\school stuff\4th year\4dk4\lab3\call_duration.h
+	"trace.h"
+	"main.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab3\trace.h
+
+1667360107 e:\school stuff\4th year\4dk4\lab3\simparameters.h
+
+1667242045 e:\school stuff\4th year\4dk4\lab3\call_departure.h
+
+1667249258 e:\school stuff\4th year\4dk4\lab3\call_arrival.h
+	"main.h"
+
+1667332067 source:e:\school stuff\4th year\4dk4\lab3\call_duration.c
+	"simparameters.h"
+	"call_duration.h"
+
+1667254723 source:e:\school stuff\4th year\4dk4\lab3\cleanup.c
+	"simlib.h"
+	"main.h"
+	"simparameters.h"
+	"cleanup.h"
+
+1667254737 e:\school stuff\4th year\4dk4\lab3\cleanup.h
+
+1667358288 source:e:\school stuff\4th year\4dk4\lab3\main.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"output.h"
+	"trace.h"
+	"simparameters.h"
+	"cleanup.h"
+	"call_arrival.h"
+	"main.h"
+
+1536251484 e:\school stuff\4th year\4dk4\lab3\output.h
+	"trace.h"
+	"main.h"
+
+1667358860 source:e:\school stuff\4th year\4dk4\lab3\output.c
+	<stdio.h>
+	"simparameters.h"
+	"main.h"
+	"output.h"
+
+1667183171 source:e:\school stuff\4th year\4dk4\lab3\simlib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"trace.h"
+	"simlib.h"
+
+1667358729 source:e:\school stuff\4th year\4dk4\lab3\call_departure.c
+	<stdio.h>
+	"trace.h"
+	"main.h"
+	"output.h"
+	"simparameters.h"
+	"call_departure.h"
+

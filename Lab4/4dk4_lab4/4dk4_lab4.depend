@@ -1,0 +1,88 @@
+# depslib dependency file v1.0
+1536247884 source:e:\school stuff\4th year\4dk4\lab4\channel.c
+	<stdio.h>
+	"simparameters.h"
+	"main.h"
+	"channel.h"
+
+1668807109 e:\school stuff\4th year\4dk4\lab4\simparameters.h
+
+1668372966 e:\school stuff\4th year\4dk4\lab4\main.h
+	"simlib.h"
+	"simparameters.h"
+	"channel.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\simlib.h
+	<stdlib.h>
+
+1667941384 e:\school stuff\4th year\4dk4\lab4\channel.h
+	"simlib.h"
+	"simparameters.h"
+
+1668374278 source:e:\school stuff\4th year\4dk4\lab4\cleanup.c
+	"simlib.h"
+	"main.h"
+	"simparameters.h"
+	"cleanup.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\cleanup.h
+
+1668372983 source:e:\school stuff\4th year\4dk4\lab4\main.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"output.h"
+	"trace.h"
+	"simparameters.h"
+	"cleanup.h"
+	"packet_arrival.h"
+	"packet_transmission.h"
+	"main.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\output.h
+	"trace.h"
+	"main.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\trace.h
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\packet_arrival.h
+
+1668374047 e:\school stuff\4th year\4dk4\lab4\packet_transmission.h
+	"main.h"
+
+1668378252 source:e:\school stuff\4th year\4dk4\lab4\output.c
+	<stdio.h>
+	"simparameters.h"
+	"main.h"
+	"output.h"
+
+1668379014 source:e:\school stuff\4th year\4dk4\lab4\packet_arrival.c
+	<math.h>
+	<stdio.h>
+	"packet_duration.h"
+	"packet_transmission.h"
+	"packet_arrival.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab4\packet_duration.h
+	"trace.h"
+	"main.h"
+
+1536247884 source:e:\school stuff\4th year\4dk4\lab4\packet_duration.c
+	"packet_duration.h"
+
+1668464937 source:e:\school stuff\4th year\4dk4\lab4\packet_transmission.c
+	<stdio.h>
+	<math.h>
+	"trace.h"
+	"output.h"
+	"channel.h"
+	"packet_transmission.h"
+
+1668379401 source:e:\school stuff\4th year\4dk4\lab4\simlib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"trace.h"
+	"simlib.h"
+	"main.h"
+
