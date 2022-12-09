@@ -22,22 +22,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../.DS_Store" />
 		<Unit filename="../GNU_PUBLIC_LICENSE.txt" />
 		<Unit filename="../GPL_HEADER.txt" />
 		<Unit filename="../README" />
-		<Unit filename="../channel.c">
+		<Unit filename="../cleanup_memory.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../channel.h" />
-		<Unit filename="../cleanup.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../cleanup.h" />
+		<Unit filename="../cleanup_memory.h" />
 		<Unit filename="../main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../main.h" />
+		<Unit filename="../modified lab2 for q5.zip" />
 		<Unit filename="../output.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,10 +42,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../packet_arrival.h" />
-		<Unit filename="../packet_duration.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../packet_duration.h" />
 		<Unit filename="../packet_transmission.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -64,6 +56,7 @@
 			<code_completion />
 			<envvars />
 			<debugger />
+			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

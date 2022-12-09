@@ -1,8 +1,9 @@
 
 /*
- * Simulation_Run of the ALOHA Protocol
  * 
- * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA
+ * Simulation_Run of A Single Server Queueing System
+ * 
+ * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA,
  * todd@mcmaster.ca
  * 
  * This program is free software; you can redistribute it and/or modify it
@@ -20,33 +21,30 @@
  * 
  */
 
-/*******************************************************************************/
+/******************************************************************************/
 
 #ifndef _OUTPUT_H_
 #define _OUTPUT_H_
 
-/*******************************************************************************/
+/******************************************************************************/
 
 #include "trace.h"
 #include "main.h"
 
-/*******************************************************************************/
+/******************************************************************************/
 
 /*
  * Function prototypes
  */
 
 void
-output_blip_to_screen(Simulation_Run_Ptr);
+output_progress_msg_to_screen(Simulation_Run_Ptr);
 
 void
 output_results(Simulation_Run_Ptr);
 
-/*******************************************************************************/
+/******************************************************************************/
 
 #endif /* output.h */
-
-
-
 
 

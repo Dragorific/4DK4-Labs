@@ -1,23 +1,24 @@
 
 /*
- * Simulation_Run of the ALOHA Protocol
- * 
- * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA
+ *
+ * Simulation_Run of A Single Server Queueing System
+ *
+ * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA,
  * todd@mcmaster.ca
- * 
+ *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
  * Software Foundation; either version 3 of the License, or (at your option)
  * any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
  * more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 
 /*******************************************************************************/
@@ -26,84 +27,116 @@
 #include <stdio.h>
 #include <math.h>
 #include "output.h"
-#include "trace.h"
 #include "simparameters.h"
-#include "cleanup.h"
 #include "packet_arrival.h"
-#include "packet_transmission.h"
+#include "cleanup_memory.h"
+#include "trace.h"
 #include "main.h"
 
-/*******************************************************************************/
+/******************************************************************************/
+
+/*
+ * main.c declares and creates a new simulation_run with parameters defined in
+ * simparameters.h. The code creates a fifo queue and server for the single
+ * server queueuing system. It then loops through the list of random number
+ * generator seeds defined in simparameters.h, doing a separate simulation_run
+ * run for each. To start a run, it schedules the first packet arrival
+ * event. When each run is finished, output is printed on the terminal.
+ */
 
 int
 main(void)
 {
-  /* Get the list of random number generator seeds defined in simparameters.h */
-  unsigned random_seed;
-  unsigned RANDOM_SEEDS[] = {RANDOM_SEED_LIST, 0};
+    Simulation_Run_Ptr simulation_run;
+    Simulation_Run_Data data;
 
-  Simulation_Run_Ptr simulation_run;
-  Simulation_Run_Data data;
-  int i, j=0;
+    /*
+    * Declare and initialize our random number generator seeds defined in
+    * simparameters.h
+    */
 
-  /* Do a new simulation_run for each random number generator seed. */
-  while ((random_seed = RANDOM_SEEDS[j++]) != 0) {
+    unsigned RANDOM_SEEDS[] = {RANDOM_SEED_LIST, 0};
+    unsigned random_seed;
+    int j=0;
 
-    /* Set the random generator seed. */
-    random_generator_initialize(random_seed);
+    /*
+    * Loop for each random number generator seed, doing a separate
+    * simulation_run run for each.
+    */
 
-    /* Create a new simulation_run. This gives a clock and
-       eventlist. Clock time is set to zero. */
-    simulation_run = (Simulation_Run_Ptr) simulation_run_new();
+    while ((random_seed = RANDOM_SEEDS[j++]) != 0) {
 
-    /* Add our data definitions to the simulation_run. */
-    simulation_run_set_data(simulation_run, (void *) & data);
+        simulation_run = simulation_run_new(); /* Create a new simulation run. */
 
-    /* Create and initalize the stations. */
-    data.stations = (Station_Ptr) xcalloc((unsigned int) NUMBER_OF_STATIONS,
-					  sizeof(Station));
+        /*
+         * Set the simulation_run data pointer to our data object.
+         */
 
-    /* Initialize various simulation_run variables. */
-    data.blip_counter = 0;
-    data.arrival_count = 0;
-    data.number_of_packets_processed = 0;
-    data.number_of_collisions = 0;
-    data.accumulated_delay = 0.0;
-    data.random_seed = random_seed;
-    
-    /* Initialize the stations. */
-    for(i=0; i<NUMBER_OF_STATIONS; i++) {
-      (data.stations+i)->id = i;
-      (data.stations+i)->buffer = fifoqueue_new();
-      (data.stations+i)->packet_count = 0;
-      (data.stations+i)->accumulated_delay = 0.0;
-      (data.stations+i)->mean_delay = 0;
+        simulation_run_attach_data(simulation_run, (void *) & data);
+
+        /*
+         * Initialize the simulation_run data variables, declared in main.h.
+         */
+
+        data.blip_counter = 0;
+
+        data.arrival_rate = 1;
+
+        data.arrival_count = 0;
+        data.arrival_count2 = 0;
+        data.arrival_count3 = 0;
+
+        data.number_of_packets_processed = 0;
+        data.number_of_packets_processed2 = 0;
+        data.number_of_packets_processed3 = 0;
+
+        data.accumulated_delay = 0.0;
+        data.accumulated_delay2 = 0.0;
+        data.accumulated_delay3 = 0.0;
+
+        data.random_seed = random_seed;
+
+        /*
+         * Create the packet buffer and transmission link, declared in main.h.
+         */
+
+        data.device1  = fifoqueue_new();
+        data.device2 = fifoqueue_new();
+        data.cloud_server = fifoqueue_new();
+        data.link  = server_new();
+        data.link2 = server_new();
+        data.link3 = server_new();
+
+        /*
+         * Set the random number generator seed for this run.
+         */
+
+        random_generator_initialize(random_seed);
+
+        /*
+         * Schedule the initial packet arrival for the current clock time (= 0).
+         */
+
+        schedule_packet_arrival_event(simulation_run, simulation_run_get_time(simulation_run));
+
+        /*
+         * Execute events until we are finished.
+         */
+
+        while(data.number_of_packets_processed < RUNLENGTH && data.number_of_packets_processed2 < RUNLENGTH && data.number_of_packets_processed3 < RUNLENGTH) {
+            simulation_run_execute_event(simulation_run);
+        }
+
+        /*
+         * Output results and clean up after ourselves.
+         */
+
+        output_results(simulation_run);
+        cleanup_memory(simulation_run);
     }
 
-    /* Create and initialize the channel. */
-    data.channel = channel_new();
-
-    /* Schedule initial packet arrival. */
-    schedule_packet_arrival_event(simulation_run, 
-		    simulation_run_get_time(simulation_run) +
-		    exponential_generator((double) 1/PACKET_ARRIVAL_RATE));
-
-    /* Execute events until we are finished. */
-    while(data.number_of_packets_processed < RUNLENGTH) {
-      simulation_run_execute_event(simulation_run);
-    }
-
-    /* Print out some results. */
-    output_results(simulation_run);
-
-    /* Clean up memory. */
-    cleanup(simulation_run);
-  }
-
-  /* Pause before finishing. */
-  getchar();
-
-  return 0;
+    getchar();   /* Pause before finishing. */
+    return 0;
 }
 
 

@@ -1,8 +1,9 @@
 
 /*
+ *  
  * Simulation_Run of A Single Server Queueing System
  * 
- * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA
+ * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA,
  * todd@mcmaster.ca
  * 
  * This program is free software; you can redistribute it and/or modify it
@@ -20,24 +21,21 @@
  * 
  */
 
-/**********************************************************************/
+/******************************************************************************/
 
-#ifndef _CLEANUP_H_
-#define _CLEANUP_H_
+#ifndef _CLEANUP_MEMORY_H_
+#define _CLEANUP_MEMORY_H_
 
-/**********************************************************************/
+/******************************************************************************/
 
 /*
  * Function prototypes
  */
 
 void
-cleanup(Simulation_Run *);
+cleanup_memory(Simulation_Run_Ptr);
 
-/**********************************************************************/
+/******************************************************************************/
 
-#endif /* cleanup.h */
-
-
-
+#endif /* cleanup_memory.h */
 

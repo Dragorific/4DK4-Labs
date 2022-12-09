@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1670549211 source:e:\school stuff\4th year\4dk4\lab5\main.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"output.h"
+	"simparameters.h"
+	"packet_arrival.h"
+	"cleanup_memory.h"
+	"trace.h"
+	"main.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab5\output.h
+	"trace.h"
+	"main.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab5\trace.h
+
+1670550295 e:\school stuff\4th year\4dk4\lab5\main.h
+	"simlib.h"
+	"simparameters.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab5\simlib.h
+	<stdlib.h>
+
+1670552237 e:\school stuff\4th year\4dk4\lab5\simparameters.h
+
+1670551875 e:\school stuff\4th year\4dk4\lab5\packet_arrival.h
+	"simlib.h"
+
+1536247884 e:\school stuff\4th year\4dk4\lab5\cleanup_memory.h
+
+1670551799 source:e:\school stuff\4th year\4dk4\lab5\output.c
+	<stdio.h>
+	"simparameters.h"
+	"main.h"
+	"output.h"
+
+1670551931 source:e:\school stuff\4th year\4dk4\lab5\packet_arrival.c
+	<math.h>
+	<stdio.h>
+	"main.h"
+	"packet_transmission.h"
+	"packet_arrival.h"
+
+1665102342 e:\school stuff\4th year\4dk4\lab5\packet_transmission.h
+	"main.h"
+
+1670551637 source:e:\school stuff\4th year\4dk4\lab5\packet_transmission.c
+	<stdio.h>
+	"trace.h"
+	"main.h"
+	"output.h"
+	"packet_transmission.h"
+
+1536247884 source:e:\school stuff\4th year\4dk4\lab5\simlib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"trace.h"
+	"simlib.h"
+
+1670551821 source:e:\school stuff\4th year\4dk4\lab5\cleanup_memory.c
+	"simlib.h"
+	"main.h"
+	"cleanup_memory.h"
+

@@ -1,8 +1,9 @@
 
 /*
- * Simulation of the ALOHA Protocol
  *
- * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA
+ * Simulation of A Single Server Queueing System
+ *
+ * Copyright (C) 2014 Terence D. Todd Hamilton, Ontario, CANADA,
  * todd@mcmaster.ca
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -20,30 +21,29 @@
  *
  */
 
-/*******************************************************************************/
+/******************************************************************************/
 
 #ifndef _SIMPARAMETERS_H_
 #define _SIMPARAMETERS_H_
 
-/*******************************************************************************/
+/******************************************************************************/
 
-#define NUMBER_OF_STATIONS 2
-#define MEAN_PACKET_DURATION 1      /* normalized packet Tx time */
-#define MEAN_PACKET_DURATION_2 1      /* normalized packet Tx time */
-#define PACKET_ARRIVAL_RATE 0.1     /* packets per Tx time */
-#define MEAN_BACKOFF_DURATION 10    /* in units of packet transmit time, Tx */
-#define RUNLENGTH 70000000
-#define BLIPRATE 100000
+#define NUMBER_OF_DEVICES 2
+#define PACKET_ARRIVAL_RATE 0.1 /* packets per second */
+#define PACKET_LENGTH 1e6 /* bits */
+#define LINK_BIT_RATE 1e6 /* bits per second */
+#define RUNLENGTH 10e6 /* packets */
 
 /* Comma separated list of random seeds to run. */
 #define RANDOM_SEED_LIST 400167784
 
-/*******************************************************************************/
+#define PACKET_XMT_TIME ((double) PACKET_LENGTH/LINK_BIT_RATE)
+#define PACKET_XMT_TIME_23 ((double) 1.0)
+#define BLIPRATE (RUNLENGTH/1000)
+
+/******************************************************************************/
 
 #endif /* simparameters.h */
-
-
-
 
 
 
